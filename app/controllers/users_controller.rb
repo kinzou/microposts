@@ -11,6 +11,21 @@ class UsersController < ApplicationController
     @user = User.new
   end
  
+  def followings
+    @title = 'followings'
+    @user = User.find(params[:id])
+    @users = @user.following_users
+    render 'show_follow'
+  end
+
+  def followers
+    @title = 'followers'
+    @user = User.find(params[:id])
+    @users = @user.follower_users
+    render 'show_follow'
+  end
+ 
+ 
   def create
     @user = User.new(user_params)
     if @user.save
