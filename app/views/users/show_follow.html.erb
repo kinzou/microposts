@@ -1,8 +1,10 @@
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1><%= @title %></h1>
-        <ol><%= render @users %></ol>
-    </section>
-  </aside>
+  <%= render "link" %>
+
+  <div class="col-md-8">
+    <h3><%= @title %> (<%= @users.count %>)</h3>
+    <ol class="users">
+     <%= render @users %>
+    </ol>
+  </div>
 </div>

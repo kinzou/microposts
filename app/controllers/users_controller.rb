@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
  
+ 
   def followings
     @title = 'followings'
     @user = User.find(params[:id])
